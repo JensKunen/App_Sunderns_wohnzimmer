@@ -8,9 +8,21 @@
     <meta property="og:title" content="Sunderns Wohnzimmer – Veranstaltungen & Tickets" />
     <meta property="og:description" content="Dein Treffpunkt für Kultur, Austausch und Gemeinschaft in Sundern." />
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&f[]=boska@400,500,700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#d97706">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
   </body>
 </html>
